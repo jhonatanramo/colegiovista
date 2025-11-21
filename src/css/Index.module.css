@@ -1,0 +1,125 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* 🌅 Fondo general */
+  .Fondo {
+    background-image: var(--gradient-main), url("../imagenes/descarga.jpeg");
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🔲 Capa overlay */
+  .overlay {
+    background: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🧩 Contenedor central */
+  .sub {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 40px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    max-width: 420px;
+    width: 90%;
+    animation: aparecer 0.8s ease-in-out;
+    backdrop-filter: blur(8px);
+  }
+  
+  /* ✨ Animación */
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* 🧾 Títulos y texto */
+  .titulo {
+    color: var(--midnight-blue);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .texto {
+    color: var(--delft-blue);
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+  
+  .linea {
+    border: none;
+    border-top: 2px solid var(--baby-blue);
+    width: 80%;
+    margin: 10px auto;
+  }
+  
+  /* 🧠 Formulario dentro del Popover */
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    text-align: left;
+  }
+  
+  .formulario label {
+    color: var(--delft-blue-2);
+    font-weight: 600;
+  }
+  
+  .formulario input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1.5px solid var(--baby-blue);
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .formulario input:focus {
+    border-color: var(--delft-blue);
+    box-shadow: 0 0 6px var(--baby-blue);
+  }
+  
+  .formulario button {
+    margin-top: 10px;
+    padding: 12px;
+    background: var(--gradient-main);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .formulario button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(
+      135deg,
+      var(--baby-blue),
+      var(--ultra-violet)
+    );
+  }
+  

@@ -1,0 +1,182 @@
+:root {
+    --baby-blue: #96D1F1;
+    --delft-blue: #2A3A71;
+    --midnight-blue: #26266E;
+    --ultra-violet: #55588C;
+    --periwinkle: #BDBCE2;
+    --glaucous: #6587BF;
+    --delft-blue-2: #3C4371;
+  
+    --gradient-main: linear-gradient(135deg, var(--baby-blue), var(--delft-blue), var(--midnight-blue));
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* 🌅 Fondo general */
+  .Fondo {
+    background-image: var(--gradient-main), url("../imagenes/descarga.jpeg");
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🔲 Capa oscura */
+  .overlay {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🧩 Contenedor central */
+  .sub {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    max-width: 420px;
+    width: 90%;
+    animation: aparecer 1s ease-in-out;
+    backdrop-filter: blur(8px);
+  }
+  
+  @keyframes aparecer {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* 📝 Títulos */
+  .tituloSecundario {
+    font-size: 1.3rem;
+    color: var(--delft-blue);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  
+  .tituloPrincipal {
+    font-size: 1.8rem;
+    color: var(--midnight-blue);
+    margin: 10px 0 20px 0;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  
+  /* 🌈 Línea decorativa */
+  .caja {
+    height: 3px;
+    width: 80%;
+    background: var(--gradient-main);
+    margin: 15px auto;
+    border-radius: 2px;
+  }
+  
+  /* 🐧 Imagen logotipo */
+  .png {
+    background-image:
+      url("./../imagenes/pinguino.png"),
+      var(--gradient-main);
+    background-size: contain, cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 180px;
+    height: 180px;
+    margin: 25px auto;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .png:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* 🔘 Botones */
+  .botones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .btn,
+  .btnSecundario {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: 500;
+  }
+  
+  /* 💠 Botón principal */
+  .btn {
+    background: var(--gradient-main);
+    color: white;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn:hover {
+    filter: brightness(1.15);
+    transform: scale(1.05);
+  }
+  
+  /* 🔷 Botón secundario */
+  .btnSecundario {
+    background-color: var(--periwinkle);
+    color: var(--delft-blue-2);
+  }
+  
+  .btnSecundario:hover {
+    background: var(--glaucous);
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* 📱 Responsivo */
+  @media (max-width: 480px) {
+    .sub {
+      padding: 25px 20px;
+    }
+  
+    .tituloPrincipal {
+      font-size: 1.4rem;
+    }
+  
+    .tituloSecundario {
+      font-size: 1rem;
+    }
+  
+    .png {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .btn,
+    .btnSecundario {
+      font-size: 0.9rem;
+    }
+  }
+  

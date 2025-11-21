@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@tailwind base; 
+@tailwind componentes; 
+@tailwind utilidades;
+
+:root {
+  /* PALETA PRINCIPAL (Azul + Morado juvenil) */
+  --primario: #6366f1;            /* Indigo 500 */
+  --primario-oscuro: #4f46e5;     /* Indigo 600 */
+  
+  --secundario: #a855f7;          /* Purple 500 */
+  --secundario-oscuro: #9333ea;   /* Purple 600 */
+
+  /* Tonos complementarios */
+  --acento: #facc15;              /* Amarillo suave (gold juvenil) */
+  --acento-oscuro: #eab308;
+
+  /* Neutros modernos */
+  --blanco: #ffffff;
+  --negro: #111827;               /* Gray-900 */
+  --gris-medio: #e5e7eb;          /* Gray-200 */
+  --gris-oscuro: #6b7280;         /* Gray-500 */
+
+  /* Efecto Glass */
+  --glass-light: rgba(255, 255, 255, 0.3);
+  --glass-dark: rgba(0, 0, 0, 0.25);
+
+  /* Sombra Premium */
+  --shadow-suave: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-fuerte: 0 6px 20px rgba(0,0,0,0.30);
+}

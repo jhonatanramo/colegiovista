@@ -1,0 +1,155 @@
+:root {
+  /* Paleta de colores principal */
+  --primario: #C44569;
+  --secundario: #A53860;
+  --acento: #88304E;
+  --negro: #1A1A2E;
+  --blanco: #F8F9FA;
+  --gris-claro: #6D214F;
+  --gris-medio: #8B5F8C;
+  
+  /* Colores adicionales para la paleta */
+  --primario-oscuro: #6F1E51;
+  --secundario-oscuro: #4A235A;
+  --acento-claro: #3C1E4E;
+}
+
+.container {
+  width: 100%;
+  max-height: 500px; /* Ajusta según necesites */
+  overflow-x: auto;  /* scroll horizontal */
+  overflow-y: auto;  /* scroll vertical */
+}
+
+/* Tabla principal */
+.table {
+  width: 100%;
+  background: white;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  font-size: 15px;
+  min-width: 600px; /* evita que se comprima demasiado */
+}
+
+/* Cabecera fija */
+.tableHeader th {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  color: var(--primario-oscuro);
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid #8a8d94;
+  z-index: 10;
+}
+
+/* Primera columna fija (ID/Nombre) */
+.table th:first-child,
+.table td:first-child {
+  position: sticky;
+  left: 0;
+  background: #ffffff;
+  z-index: 5;
+  border-right: 1px solid #ccc;
+}
+
+/* Si quieres que la primera columna también destaque un poco */
+.table th:first-child {
+  z-index: 12; /* Encima de otras celdas */
+}
+
+/* Celdas */
+td, th {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+/* Filas */
+tr {
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+tr:nth-child(even) {
+  background: #f9f9fb;
+}
+
+tr:hover {
+  background: #eef2ff;
+}
+
+/* Texto */
+.textCell {
+  color: #333;
+}
+
+/* Imagen */
+.imageCell {
+  max-width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Código de barras */
+.barcode {
+  display: block;
+  position: relative;
+  z-index: 0;
+  margin: auto;
+}
+
+/* Botones y acciones */
+.actionsCell {
+  text-align: center;
+}
+
+.actionsCell button {
+  margin: 3px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Editar */
+.editButton {
+  background-color: #285da718;
+  color: #285da7;
+  border: 15px solid #285da7;
+}
+
+.editButton:hover {
+  background-color: #285da7ad;
+  color: #d7e7f5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Eliminar */
+.deleteButton {
+  background-color: #0923352d;
+  color: #092335;
+  border: 1px solid transparent;
+}
+
+.deleteButton:hover {
+  background-color: #071e2fce;
+  color: #d7e7f5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Estado vacío */
+.emptyState {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-size: 15px;
+}
