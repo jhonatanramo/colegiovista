@@ -30,7 +30,7 @@ export function Login() {
 
     try {
       const response = await Server.post(
-        "api/login/",
+        "/api/login/",
         { clave }, // enviar la clave directamente
         { withCredentials: true }
       );
@@ -53,12 +53,13 @@ export function Login() {
   return (
     <div className={Css.Fondo}>
       <div className={Css.caja}>
-        <h1>Armonia Juvenil</h1>
-        <h2>"El Torno - Puerto Rico - Jorochito - Tiquipaya - La Angostua"</h2>
-        <img src={Img} alt="Usuario" className={Css.imagen} />
+        <h1>Jesvaw EduSoft</h1>
+        <h2>"Bienvenidio a nuestro sistemas Saas"</h2>
+        <center><img src={Img} alt="Usuario" className={Css.imagen} /></center>
 
         <form onSubmit={handleSubmit} className={Css.form}>
-          <label>Clave</label>
+          
+          <label>Clave:</label>
           <input
             type="text"
             placeholder="Clave"
@@ -71,6 +72,7 @@ export function Login() {
             Ingresar
           </button>
         </form>
+        Registrarse porfevor en en caso que no lo este <br />
         <Formulario data={data}/>
       </div>
     </div>
