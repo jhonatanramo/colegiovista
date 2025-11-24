@@ -30,7 +30,7 @@ export function Login() {
 
     try {
       const response = await Server.post(
-        "/api/login/",
+        "api/login/",
         { clave }, // enviar la clave directamente
         { withCredentials: true }
       );

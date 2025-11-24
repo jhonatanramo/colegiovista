@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "hhttps://colegiologica.onrender.com/",
+  baseURL: "https://colegiologica.onrender.com/",
 });
 //dxcsdcsdc
 // http://127.0.0.1:8000/
