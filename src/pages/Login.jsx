@@ -1,74 +1,43 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Css from "./css/Login.module.css";
 import { Formulario } from "../coponentes/Formulario/Formulario";
-import  Server  from "../api"; // ✔ tu instancia Axios
+import Server from "../api";
 import Img from '../../public/imagenes/pinguino.png';
 
-
-// Configuración del formulario
-const data = {
-  Titulo: 'Crear Usuario',
-  Backendt: 'api/usuario/crear/',
-  Input: [
-    "url-Foto de Perfil-file",
-    "nombre-Nombre-text",
-    "apellido_p-Apellido Paterno-text",
-    "apellido_m-Apellido Materno-text",
-    "fecha_nacimiento-Fecha De Nacimiento-date",
-  ],
-  Recibir: [
-    {
-      Ruta: 'api/iglesias/',
-      name: "iglesia",
-      items: ["id", "nombre"]
-    },
-  ]
-};
-
 export function Login() {
-  const [fecha, setFecha] = useState("");
+  const [clave, setClave] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const nombre = localStorage.getItem("nombre");
-    if (nombre) {
-      navigate("/index");
-      console.log("Existe:", nombre);
-    } else {
-      console.log("No existe usuario guardado");
-    }
-  }, []);
+  const data = {
+    Titulo: "Registrarse",
+    Backendt: "/api/usuario/usuarioNormal/",
+    Input: [
+      "nombre-nombre-text",
+      "apellido_paterno-apellido_paterno-text",
+      "apellido_materno-apellido_materno-text",
+      "ci-ci-text",
+      "correo-correo-text",
+      "clave-clave-text",
+    ],
+    Recibir: [],
+    url: { estado: false },
+    carrito: []
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!fecha.match(/^\d{2}\.\d{2}\.\d{4}$/)) {
-      alert("Formato de fecha inválido. Usa DD.MM.YYYY");
-      return;
-    }
-
-    const [day, month, year] = fecha.split(".");
-    const fechaFormateada = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
-
     try {
       const response = await Server.post(
         "api/login/",
-        { fecha_nacimiento: fechaFormateada },
-        { withCredentials: true } // ✔ equivalente a credentials:"include"
+        { clave }, // enviar la clave directamente
+        { withCredentials: true }
       );
 
       const data = response.data;
-
-      // Guardar en localStorage
-      localStorage.setItem('nombre', data.usuario.nombre);
-      localStorage.setItem('paterno', data.usuario.apellido_p);
-      localStorage.setItem('materno', data.usuario.apellido_m);
-      localStorage.setItem('rol', data.usuario.rol);
-      localStorage.setItem('url', data.usuario.url || "");
-
       console.log("Inicio de sesión exitoso:", data);
-      navigate("/index");
+      navigate("/index"); 
 
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
@@ -89,21 +58,20 @@ export function Login() {
         <img src={Img} alt="Usuario" className={Css.imagen} />
 
         <form onSubmit={handleSubmit} className={Css.form}>
-          <label>Fecha de Nacimiento</label>
+          <label>Clave</label>
           <input
             type="text"
-            placeholder="20.12.2001"
+            placeholder="Clave"
             className={Css.input}
-            value={fecha}
-            onChange={(e) => setFecha(e.target.value)}
+            value={clave}
+            onChange={(e) => setClave(e.target.value)}
             required
           />
           <button type="submit" className={Css.boton}>
             Ingresar
           </button>
         </form>
-
-        <Formulario data={data} />
+        <Formulario data={data}/>
       </div>
     </div>
   );

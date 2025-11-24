@@ -15,23 +15,22 @@ export function Cuerpo() {
       <ul>
 
         {/* Mostrar solo si existe 'rol' en localStorage */}
-        {localStorage.getItem('rol')==="true" && (
+        
           <MenuItem
             Icono="newspaper-outline"
             Titulo="Gestion"
             abierto={menuActivo === 'Gestion'}
             onClick={() => toggleSubmenu('Gestion')}
           >
-            <Item icon='cube' Titulo="Gestion de Usuarios" enlace="/Usuarios" />
-            <Item icon='cube' Titulo="Gestion de Repertorio" enlace="/Rertorio" />
-            <Item icon='cube' Titulo="Gestion de Eventos" enlace="/Eventos" />
-            <Item icon='cube' Titulo="Gestion de Iglesias" enlace="/Iglesias" />
+            <Item icon='people' Titulo="Gestion de Usuarios" enlace="/Personal" />
+            <Item icon='mail' Titulo="Gestion de Notificaciones" enlace="/notificacion" />
+            <Item icon='cube' Titulo="Gestion de Crusos" enlace="/grado" />
+            <Item icon='calendar' Titulo="Gestion de Gestion" enlace="/Gestion" />
+            <Item icon='book' Titulo="Gestion de Materias" enlace="/Materia" />
           </MenuItem>
-        )}
-
-        {/* Opciones accesibles para todos */}
-        <Item icon='shirt' Titulo="Busqueda" enlace="/Buscar" />
-        <Item icon='shirt' Titulo="Calendario" enlace="/Calendario" />
+          <Item icon='calculator' Titulo="Reportes" enlace="/mos" />
+          <Item icon='color-palette' Titulo="Stilos" enlace="/new" />
+          <Item icon='person' Titulo="Perfil" enlace="/mos" />
 
       </ul>
     </div>

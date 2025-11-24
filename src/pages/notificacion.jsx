@@ -1,9 +1,10 @@
 import {Formulario} from '../coponentes/Formulario/Formulario';
+import { Barra } from '../coponentes/BarraMenu/Barra';
 import {Tabla} from '../coponentes/Table/Tabla';
 export function Notification(){
     const data ={
-        Titulo: "Crear Notificación",      // Título del Popover y formulario
-        Backendt: "/api/notificacion/crear/",
+        Titulo: "Crea Usuario",      // Título del Popover y formulario
+        Backendt: "/api/usuario/crear/Docente/",
         Input: [
             "titulo-Título-text-Título de la notificación",
             "mensaje-Mensaje-tt-Escribe el mensaje aquí"
@@ -17,13 +18,12 @@ export function Notification(){
         valor:["id","titulo","mensaje","fechaCreada","horaCreada"],
     }
     return(
-        <>
+        <Barra>
         <br />
         <br />
             <center><Formulario data={data}/></center>
             <br /><br />
             <Tabla data={tabla}/>
-        </>
-        
+        </Barra>
     );
 }

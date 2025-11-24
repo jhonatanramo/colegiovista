@@ -1,7 +1,17 @@
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Notification } from './pages/notificacion';
+import { Asistencia } from './pages/Gestion/Asistencia';
+import {Gestion} from './pages/Gestion/Gestion';
+import {Materias} from './pages/Gestion/Materia';
+import {Grado} from './pages/Gestion/Grado';
+import AIReportGenerator  from './coponentes/AIReportGenerator/AIReportGenerator.jsx';
+import { Login } from './pages/Login';
+import { Index } from './pages';
+import { Usuario } from './pages/Gestion/Usuario';
+import {Stilos} from './pages/Stilos.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -19,33 +29,20 @@ function App() {
       />
       
       <Routes>
-        <Route path='/' element={<Notification />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/index' element={<Index />} />
+        <Route path='/login' element={<Login />} />
+
+        <Route path='/notificacion' element={<Notification />} />        
+        <Route path='/Asistencia' element={<Asistencia />} />
+        <Route path='/Gestion' element={<Gestion />} />
+        <Route path='/Materia' element={<Materias />} />
+        <Route path='/grado' element={<Grado />} />
+        <Route path='/mos' element={<AIReportGenerator />} />
+        <Route path='/Personal' element={<Usuario />} />
+        <Route path='/new' element={<Stilos />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;
-/*
-import {Buscar} from './pages/Buscar';
-import { Login } from './pages/Login';
-
-import { Calendario } from './pages/Calendario';
-import { Index } from './pages/index';
-import { Usuarios } from './pages/Gestion/Usuarios';
-import { Prueba } from './Prueba';
-import { Repertorio } from './pages/Gestion/Repetoria';
-import { Eventos } from './pages/Gestion/Eventos';
-import {Iglesias} from './pages/Gestion/Iglesias';
-
-
-<Route path='/' element={<Login />} />
-<Route path='/Calendario' element={<Calendario />} />
-<Route path='/index' element={<Index />} />
-<Route path='/Usuarios' element={<Usuarios />} />
-<Route path='/new' element={<Prueba />} />
-<Route path='/Rertorio' element={<Repertorio />} />
-<Route path='/Eventos' element={<Eventos />} />
-<Route path='/Iglesias' element={<Iglesias />} />
-<Route path='/Buscar' element={<Buscar />} /> 
-*/
